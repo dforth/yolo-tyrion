@@ -48,6 +48,7 @@ app.get(config.rest_base_url, function (req, res) {
 });
 
 // FIRE IT UP
-server.listen(config.port, function () {
+var port = Number(process.env.PORT || config.port);
+server.listen(port, function () {
   console.log("Express server listening on port %d", config.port);
 });
