@@ -1,0 +1,53 @@
+{
+    "links": [
+        {
+            "name": "Agile Manifesto",
+            "url": "http://agilemanifesto.org/"
+        },
+        {
+            "name": "node.js",
+            "url": "http://www.nodejs.org"
+        },
+        {
+            "name": "AngularJS",
+            "url": "http://www.angularjs.org"
+        },
+        {
+            "name": "Spring",
+            "url": "http://www.spring.io"
+        },
+        {
+            "name": "iOS Dev Center",
+            "url": "https://developer.apple.com/devcenter/ios/index.action"
+        },
+        {
+            "name": "Year Of Moo",
+            "url": "http://www.yearofmoo.com/"
+        },
+        {
+            "name": "Bootstrap UI",
+            "url": "http://angular-ui.github.io/bootstrap/"
+        },
+        {
+            "name": "Bootstrap CSS",
+            "url": "http://getbootstrap.com/css/"
+        },
+        {
+            "name": "Inessential",
+            "url": "http://inessential.com/"
+        },
+        {
+            "name": "Joel Hooks",
+            "url": "http://joelhooks.com/"
+        },
+        {
+            "name": "Swift Blog",
+            "url": "https://developer.apple.com/swift/blog/"
+        },
+        {
+            "name": "Daring Fireball",
+            "url": "http://daringfireball.net/"
+        }
+
+    ]
+}
