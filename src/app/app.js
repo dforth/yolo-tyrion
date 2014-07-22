@@ -12,7 +12,7 @@ angular.module('testapp', [
 ])
 
   .config(function ($urlRouterProvider) {
-    $urlRouterProvider.when('', '/page1');
+    $urlRouterProvider.when('', '/links');
   })
 
   .controller('AppCtrl', function AppCtrl($scope, $state) {
