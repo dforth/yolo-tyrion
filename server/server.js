@@ -29,7 +29,17 @@ app.use(express.cookieParser());
 app.enable('trust proxy');
 app.use(express.compress());
 app.use(express.bodyParser());
-app.use(express.static(config.static_site_root));
+//app.use(express.static(config.static_site_root));
+
+app.use('/assets', express.static(config.static_site_root + '/assets'));
+app.use('/vendor', express.static(config.static_site_root + '/vendor'));
+app.use('/js', express.static(config.static_site_root + '/js'));
+
+// TODO: fix this
+app.use('/src', express.static(config.static_site_root + '/src'));
+
+
+
 
 app.get(config.rest_base_url, function (req, res) {
   var splitPath = req.params[0].split("/"),
@@ -46,6 +56,12 @@ app.get(config.rest_base_url, function (req, res) {
     res.send(500);
   }
 });
+
+app.get('/*', function(req, res, next) {
+
+    res.sendfile('index.html', {root: config.static_site_root})
+});
+
 
 // FIRE IT UP
 var port = Number(process.env.PORT || config.port);

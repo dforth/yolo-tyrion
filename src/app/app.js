@@ -12,10 +12,15 @@ angular.module('testapp', [
 ])
 
   .config(function ($urlRouterProvider) {
-    $urlRouterProvider.when('', '/links');
+    $urlRouterProvider.otherwise('/links');
   })
 
-  .controller('AppCtrl', function AppCtrl($scope, $state) {
+  .config(['$locationProvider', function($location) {
+    $location.html5Mode('true');
+  }])
+
+
+.controller('AppCtrl', function AppCtrl($scope, $state) {
     var appCtrl = this;
 
         appCtrl.isState = function(stateName) {
