@@ -6,7 +6,7 @@ angular.module('testapp.about', [
 
 			$stateProvider
 
-					.state('about', {
+					.state('app.about', {
 
 						url: '/about',
 						templateUrl: 'about/about.tpl.html',

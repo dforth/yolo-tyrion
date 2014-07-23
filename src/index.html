@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="testapp">
-<head>
-    <title>Angular SEO Test</title>
-    <meta name="google-site-verification" content="SpD5B0R_ICs3Vd6SHU3FAVjOCsy23IjoDFDdYF3Lvhg" />
-    <% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
-    <% }); %>
-</head>
-<body ng-controller="AppCtrl as appCtrl">
-<div class="container pageHeader">
-    <div>
-        <ul class="nav navbar-nav">
-            <li ng-class="{selectednav: appCtrl.isState('links')}"><a  ui-sref="links">Links</a></li>
-            <li ng-class="{selectednav: appCtrl.isState('devo')}"><a ui-sref="devo">Devo</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li ng-class="{selectednav: appCtrl.isState('about')}"><a ui-sref="about">About</a></li>
-        </ul>
-    </div>
-</div>
-<div class="container pageContent">
-    <div ui-view></div>
-</div>
+    <head>
+        <title>Angular SEO Test</title>
+        <meta name="google-site-verification" content="SpD5B0R_ICs3Vd6SHU3FAVjOCsy23IjoDFDdYF3Lvhg" />
+        <% styles.forEach( function ( file ) { %>
+            <link rel="stylesheet" type="text/css" href="/<%= file %>"/>
+        <% }); %>
+    </head>
+    <body>
 
-<% scripts.forEach( function ( file ) { %>
-<script type="text/javascript" src="<%= file %>"></script>
-<% }); %>
-</body>
+        <div ui-view></div>
+
+        <% scripts.forEach( function ( file ) { %>
+            <script type="text/javascript" src="/<%= file %>"></script>
+        <% }); %>
+
+    </body>
 </html>

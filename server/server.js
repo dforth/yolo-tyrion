@@ -29,16 +29,7 @@ app.use(express.cookieParser());
 app.enable('trust proxy');
 app.use(express.compress());
 app.use(express.bodyParser());
-//app.use(express.static(config.static_site_root));
-
-app.use('/assets', express.static(config.static_site_root + '/assets'));
-app.use('/vendor', express.static(config.static_site_root + '/vendor'));
-app.use('/js', express.static(config.static_site_root + '/js'));
-
-// TODO: fix this
-app.use('/src', express.static(config.static_site_root + '/src'));
-
-
+app.use(express.static(config.static_site_root));
 
 
 app.get(config.rest_base_url, function (req, res) {
@@ -57,9 +48,32 @@ app.get(config.rest_base_url, function (req, res) {
   }
 });
 
-app.get('/*', function(req, res, next) {
+app.get('/app/*', function(req, res, next) {
 
     res.sendfile('index.html', {root: config.static_site_root})
+});
+
+
+app.get('*', function(req, res, next) {
+
+    res.status(404);
+
+    // respond with html page
+    if (req.accepts('html')) {
+
+        res.sendfile('index.html', {root: config.static_site_root});
+        return;
+    }
+
+    // respond with json
+    if (req.accepts('json')) {
+
+        res.send({ error: 'Not found' });
+        return;
+    }
+
+    // default to plain-text. send()
+    res.type('txt').send('Not found');
 });
 
 

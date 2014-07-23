@@ -6,7 +6,7 @@ angular.module('testapp.devo', [
 
 			$stateProvider
 
-					.state('devo', {
+					.state('app.devo', {
 
 						url: '/devo',
 						templateUrl: 'devo/devo.tpl.html',

@@ -5,7 +5,7 @@ angular.module('testapp.links', [
   .config(function ($stateProvider) {
 
     $stateProvider
-      .state('links', {
+      .state('app.links', {
         url: '/links',
         templateUrl: 'links/links.tpl.html',
         controller: 'LinksCtrl as linksCtrl'

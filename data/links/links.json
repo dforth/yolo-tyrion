@@ -47,6 +47,14 @@
         {
             "name": "Daring Fireball",
             "url": "http://daringfireball.net/"
+        },
+        {
+            "name": "html5mode FAQ",
+            "url": "https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-configure-your-server-to-work-with-html5mode"
+        },
+        {
+            "name": "Push State browser support",
+            "url": "http://caniuse.com/#search=pushstate"
         }
 
     ]
