@@ -70,6 +70,17 @@ module.exports = function(grunt) {
                         expand: true
                     }
                 ]
+            },
+            other_files: {
+                files: [
+                    {
+                        src: [ '<%= app_files.other %>'],
+                        dest: '<%= build_dir %>/',
+                        cwd: '.',
+                        expand: true,
+                        flatten: true
+                    }
+                ]
             }
         },
 
@@ -225,6 +236,15 @@ module.exports = function(grunt) {
                 tasks: [ 'less' ],
                 options: {
                 }
+            },
+            other: {
+                files: [
+                    '<%= app_files.other %>'
+                ],
+                tasks: [ 'build' ],
+                options: {
+
+                }
             }
         },
 
@@ -277,7 +297,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean', 'copy:app_assets', 'copy:vendor_assets',
-        'copy:appjs', 'copy:vendorjs', 'less:build', 'html2js', 'index'
+        'copy:appjs', 'copy:vendorjs', 'copy:other_files','less:build', 'html2js', 'index'
     ]);
 
     grunt.registerTask('compile', [

@@ -5,12 +5,12 @@ angular.module('testapp', [
     'testapp.links',
     'testapp.devo',
     'testapp.about',
+    'testapp.test',
     'testapp.404',
     'testapp.500',
     'templates-app',
     'templates-common',
-    'testapp.config',
-    'chieffancypants.loadingBar'
+    'testapp.config'
 ])
 
     .config(function ($urlRouterProvider, $stateProvider, $httpProvider) {
@@ -27,7 +27,7 @@ angular.module('testapp', [
         ;
 
 
-        $httpProvider.interceptors.push(function($q) {
+        $httpProvider.interceptors.push(function($q, $location) {
 
             return {
 
@@ -58,20 +58,16 @@ angular.module('testapp', [
                     // do something on known errors
                     if (response.status == 404) {
 
-                        return {
-                            url: '/app/404'
-                        };
+                        // Redirect the site to our 404 page
+                        $location.path('/app/404');
 
                     } else if (response.status == 500) {
 
-                        return {
-                            url: '/app/500'
-                        };
-
-                    } else {
-
-                        return $q.reject(response);
+                        // Redirect the site to our 500 page
+                        $location.path('/app/500');
                     }
+
+                    return $q.reject(response);
 
                 }
 

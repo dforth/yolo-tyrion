@@ -48,6 +48,15 @@ app.get(config.rest_base_url, function (req, res) {
   }
 });
 
+app.get('/statusService/*', function(req, res) {
+
+    var status = req.url.substring(req.url.lastIndexOf('/') + 1);
+    res.status(status);
+    //console.log("statusService: ", status);
+    res.send({});
+    return;
+});
+
 app.get('/app/*', function(req, res, next) {
 
     res.sendfile('index.html', {root: config.static_site_root})

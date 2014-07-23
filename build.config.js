@@ -12,7 +12,8 @@ module.exports = {
         ctpl: [ 'src/common/**/*.tpl.html' ],
         // the index.html
         html: [ 'src/index.html' ],
-        less: ['src/less/main.less', 'src/app/**/*.less']
+        less: ['src/less/main.less', 'src/app/**/*.less'],
+        other: ['src/sitemap.xml', 'src/robots.txt']
     },
 
     test_files: {
@@ -28,7 +29,6 @@ module.exports = {
             'vendor/lodash/dist/lodash.underscore.js',
             'vendor/angular/angular.js',
             'vendor/angular-cookies/angular-cookies.js',
-            'vendor/angular-loading-bar/build/loading-bar.js',
             'vendor/angular-ui-router/release/angular-ui-router.js',
             'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
             'vendor/moment/moment.js'
