@@ -74,12 +74,13 @@ angular.module('testapp', [
             };
 
         });
-
-
     })
 
     .config(['$locationProvider', function ($location) {
-        $location.html5Mode('true');
+        $location
+            .html5Mode('true')
+            .hashPrefix('!');
+        ;
     }])
 
 

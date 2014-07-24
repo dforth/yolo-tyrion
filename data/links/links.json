@@ -55,6 +55,10 @@
         {
             "name": "Push State browser support",
             "url": "http://caniuse.com/#search=pushstate"
+        },
+        {
+            "name": "Google Webmasters Spec",
+            "url": "https://developers.google.com/webmasters/ajax-crawling/docs/specification"
         }
 
     ]

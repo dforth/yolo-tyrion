@@ -31,6 +31,20 @@ app.use(express.compress());
 app.use(express.bodyParser());
 app.use(express.static(config.static_site_root));
 
+if (environment == 'test') {
+
+    app.use(require('prerender-node')
+            .set('prerenderServiceUrl', config.prerender_service_url)
+            .set('afterRender', function(req, res) {
+                console.log('prerender responded to request: ', req.url);
+            })
+    );
+
+} else {
+
+    app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
+}
+
 
 app.get(config.rest_base_url, function (req, res) {
   var splitPath = req.params[0].split("/"),
