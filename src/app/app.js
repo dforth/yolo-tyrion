@@ -26,7 +26,6 @@ angular.module('testapp', [
             .otherwise('/app/404')
         ;
 
-
         $httpProvider.interceptors.push(function($q, $location) {
 
             return {
@@ -79,8 +78,9 @@ angular.module('testapp', [
     .config(['$locationProvider', function ($location) {
         $location
             .html5Mode('true')
-            .hashPrefix('!');
+            .hashPrefix('!')
         ;
+
     }])
 
 

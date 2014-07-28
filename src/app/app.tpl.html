@@ -2,12 +2,12 @@
     <div class="container pageHeader">
         <div>
             <ul class="nav navbar-nav">
-                <li ng-class="{selectednav: appCtrl.isState('app.links')}"><a ui-sref="app.links">Links</a></li>
-                <li ng-class="{selectednav: appCtrl.isState('app.devo')}"><a ui-sref="app.devo">Devo</a></li>
-                <li ng-class="{selectednav: appCtrl.isState('app.test')}"><a ui-sref="app.test">Test</a></li>
+                <li ng-class="{selectednav: appCtrl.isState('app.links')}"><a href ui-sref="app.links">Links</a></li>
+                <li ng-class="{selectednav: appCtrl.isState('app.devo')}"><a href ui-sref="app.devo">Devo</a></li>
+                <li ng-class="{selectednav: appCtrl.isState('app.test')}"><a href ui-sref="app.test">Test</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{selectednav: appCtrl.isState('app.about')}"><a ui-sref="app.about">About</a></li>
+                <li ng-class="{selectednav: appCtrl.isState('app.about')}"><a href ui-sref="app.about">About</a></li>
             </ul>
         </div>
     </div>
